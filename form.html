@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="content">
+        <div class="row">
+            <div class="col-12 col-xl-12 py-4">
+                <div class="row">
+                    <div class="col-12 mb-4">
+                        <div class="card border-0 shadow">
+    
+                            <div class="card-header border-bottom d-flex align-items-center justify-content-between">
+                                <h2 class="fs-5 fw-bold mb-0">Add Button</h2>
+                            </div>
+                            <div class="card-body" id="template">
+                                <form action="" method="POST" class="p-4 pt-2">
+    
+                                    <div class="form-group mb-4">
+                                        <label for="name">Name</label>
+                                        <div class="input-group w-100 flex-nowrap">
+                                            <span class="input-group-text">
+                                                <svg class="icon icon-xs text-gray-600" fill="currentColor"
+                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="m21 4c0-.478-.379-1-1-1h-16c-.62 0-1 .519-1 1v16c0 .621.52 1 1 1h16c.478 0 1-.379 1-1zm-1.5 5.505v9.995h-15v-9.995zm0-1.5h-15v-3.505h15zm-2.25-2.5c.414 0 .75.336.75.75s-.336.75-.75.75-.75-.336-.75-.75.336-.75.75-.75zm-3 0c.414 0 .75.336.75.75s-.336.75-.75.75-.75-.336-.75-.75.336-.75.75-.75z"
+                                                        fill-rule="nonzero"></path>
+                                                </svg>
+                                            </span>
+                                            <input type="text" name="name" id="name" class="form-control"
+                                                placeholder="button name" maxlength="30" value="" required="">
+                                        </div>
+                                    </div>
+    
+                                    <div class="form-group mb-4">
+                                        <label for="type">Type</label>
+                                        <div class="input-group w-100 flex-nowrap">
+                                            <span class="input-group-text">
+                                                <svg class="icon icon-xxs ms-1" fill="currentColor" viewBox="0 0 25 25"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                            <select name="type" id="type" class="form-select rounded-0"
+                                                style="cursor:pointer">
+                                                <option value="button" selected="">Button</option>
+                                                <option value="template">Template</option>
+                                                <option value="list">List</option>
+                                            </select>
+    
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4 d-none">
+                                        <label for="title">Title</label>
+                                        <div class="input-group w-100 flex-nowrap">
+                                            <span class="input-group-text">
+                                                <svg class="icon icon-xxs ms-1" fill="currentColor" viewBox="0 0 25 25"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                            <input type="text" name="title" id="title" class="form-control"
+                                                placeholder="title text" value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <div id="file-exist" class="d-flex flex-column"></div>
+                                        <div class="d-flex justify-content-between"><label for="file">File</label><br>
+                                            <small class="d-block text-end"><u style="cursor:pointer"
+                                                    id="fileinfo">Limitation</u></small></div>
+                                        <input class="form-control" type="file" id="file"> <small>note : image or video
+                                            only</small>
+    
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label for="message">Message</label>
+                                        <div class="input-group w-100 flex-nowrap">
+                                            <span class="input-group-text">
+                                                <svg class="icon icon-xxs ms-1" fill="currentColor" viewBox="0 0 25 25"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                            <textarea name="message" id="message" cols="30" rows="10" class="form-control"
+                                                placeholder="input your button message"></textarea>
+                                        </div>
+                                    </div>
+    
+                                    <div class="form-group mb-4">
+                                        <label for="footer">Footer</label>
+                                        <div class="input-group w-100 flex-nowrap">
+                                            <span class="input-group-text">
+                                                <svg class="icon icon-xxs ms-1" fill="currentColor" viewBox="0 0 25 25"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                            <input type="text" name="footer" id="footer" class="form-control"
+                                                placeholder="footer text" value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4 d-none">
+                                        <label for="buttonTitle">Button Title</label>
+                                        <div class="input-group w-100 flex-nowrap">
+                                            <span class="input-group-text">
+                                                <svg class="icon icon-xxs ms-1" fill="currentColor" viewBox="0 0 25 25"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                            <input type="text" name="buttonTitle" id="buttonTitle" class="form-control"
+                                                placeholder="list title" value="">
+                                        </div>
+                                    </div>
+    
+                                    <div class="form-group mb-4">
+                                        <label for="purpose">Purpose</label>
+                                        <div class="input-group w-100 flex-nowrap">
+                                            <span class="input-group-text">
+                                                <svg class="icon icon-xxs ms-1" fill="currentColor" viewBox="0 0 25 25"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                            <select name="purpose" id="purpose" class="form-select rounded-0"
+                                                style="cursor:pointer">
+                                                <option value="autoreply" selected="">Autoreply</option>
+                                                <option value="send">Send only</option>
+                                            </select>
+    
+                                        </div>
+                                    </div>
+                                    <script></script>
+                                    <div id="buttons">
+                                        <div class="buttonSection">
+                                            <label>Button 1</label>
+                                            <div class="mb-4 p-4 border button">
+                                                <div class="form-group mb-4 d-none">
+                                                    <label for="type1">Type</label>
+                                                    <div class="input-group w-100 flex-nowrap">
+                                                        <span class="input-group-text">
+                                                            <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                        <select name="type1" id="type1" class="form-select rounded-0"
+                                                            style="cursor:pointer">
+                                                            <option value="button" selected="">Button</option>
+                                                            <option value="url">URL</option>
+                                                            <option value="phone">Phone</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group mb-sm-4 ">
+                                                    <div class="form-group mb-4 d-none">
+                                                        <label for="title1">List Title</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <input type="text" name="title1" id="title1"
+                                                                class="form-control" placeholder="title">
+                                                        </div>
+                                                        <small>Leave empty to group with previous title</small>
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label for="message1">Text</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <input type="text" name="message1" id="message1"
+                                                                class="form-control" placeholder="text">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-4 d-none">
+                                                        <label for="footer1">Footer</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <input type="text" name="footer1" id="footer1"
+                                                                class="form-control" placeholder="text">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label for="id1">Id</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <input type="text" name="id1" id="id1" class="form-control"
+                                                                placeholder="idbutton-1" maxlength="30">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-4 d-none">
+                                                        <label for="url1">URL</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <input type="url" name="url1" id="url1" class="form-control"
+                                                                placeholder="https://fonnte.com">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-4 d-none">
+                                                        <label for="tel1">Phone number</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <input type="text" name="tel1" id="tel1" class="form-control"
+                                                                placeholder="6282227097005">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="responseWrapper">
+                                                    <div class="form-group mb-4 ">
+                                                        <label for="response1">Response</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <select name="response1" id="response1"
+                                                                class="form-select rounded-0" style="cursor:pointer">
+                                                                <option value="message" selected="">Message</option>
+                                                                <option value="button">Button</option>
+                                                                <option value="template">Template</option>
+                                                                <option value="list">List</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <div id="file-exist1" class="d-flex flex-column"></div>
+                                                        <div class="d-flex justify-content-between"><label
+                                                                for="file-exist1">File</label><br>
+                                                            <small class="d-block text-end"><u style="cursor:pointer"
+                                                                    id="fileinfo">Limitation</u></small></div>
+                                                        <input class="form-control" type="file" id="file1" name="file1">
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label for="file1">Response Message</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <textarea name="responseMessage1" id="responseMessage1"
+                                                                cols="30" rows="10" class="form-control"
+                                                                placeholder="input your response message"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-4 d-none">
+                                                        <label for="responseMessage1">Button</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <select name="buttonResponse1" id="buttonResponse1"
+                                                                class="form-select rounded-0" style="cursor:pointer">
+                                                                <!-- <option value="1" selected>button 1</option>
+                                                                <option value="2">button 2</option> -->
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+    
+    
+    
+    
+                                        <div class="buttonSection">
+                                            <label>Button 2</label>
+                                            <div class="mb-4 p-4 border button">
+                                                <div class="form-group mb-4 d-none">
+                                                    <label for="type2">Type</label>
+                                                    <div class="input-group w-100 flex-nowrap">
+                                                        <span class="input-group-text">
+                                                            <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                        <select name="type2" id="type2" class="form-select rounded-0"
+                                                            style="cursor:pointer">
+                                                            <option value="button" selected="">Button</option>
+                                                            <option value="url">URL</option>
+                                                            <option value="phone">Phone</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group mb-sm-4 ">
+                                                    <div class="form-group mb-4 d-none">
+                                                        <label for="title2">List Title</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <input type="text" name="title2" id="title2"
+                                                                class="form-control" placeholder="title">
+                                                        </div>
+                                                        <small>Leave empty to group with previous title</small>
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label for="message2">Text</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <input type="text" name="message2" id="message2"
+                                                                class="form-control" placeholder="text">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-4 d-none">
+                                                        <label for="footer2">Footer</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <input type="text" name="footer2" id="footer2"
+                                                                class="form-control" placeholder="text">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label for="id2">Id</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <input type="text" name="id2" id="id2" class="form-control"
+                                                                placeholder="idbutton-2" maxlength="30">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-4 d-none">
+                                                        <label for="url2">URL</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <input type="url" name="url2" id="url2" class="form-control"
+                                                                placeholder="https://fonnte.com">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-4 d-none">
+                                                        <label for="tel2">Phone number</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <input type="text" name="tel2" id="tel2" class="form-control"
+                                                                placeholder="6282227097005">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="responseWrapper">
+                                                    <div class="form-group mb-4 ">
+                                                        <label for="response2">Response</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <select name="response2" id="response2"
+                                                                class="form-select rounded-0" style="cursor:pointer">
+                                                                <option value="message" selected="">Message</option>
+                                                                <option value="button">Button</option>
+                                                                <option value="template">Template</option>
+                                                                <option value="list">List</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <div id="file-exist2" class="d-flex flex-column"></div>
+                                                        <div class="d-flex justify-content-between"><label
+                                                                for="file-exist2">File</label><br>
+                                                            <small class="d-block text-end"><u style="cursor:pointer"
+                                                                    id="fileinfo">Limitation</u></small></div>
+                                                        <input class="form-control" type="file" id="file2" name="file2">
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label for="file2">Response Message</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <textarea name="responseMessage2" id="responseMessage2"
+                                                                cols="30" rows="10" class="form-control"
+                                                                placeholder="input your response message"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-4 d-none">
+                                                        <label for="responseMessage2">Button</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <select name="buttonResponse2" id="buttonResponse2"
+                                                                class="form-select rounded-0" style="cursor:pointer">
+                                                                <!-- <option value="1" selected>button 1</option>
+                                                                <option value="2">button 2</option> -->
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="buttonSection">
+                                            <label>Button 3</label>
+                                            <div class="mb-4 p-4 border button">
+                                                <div class="form-group mb-4 d-none">
+                                                    <label for="type3">Type</label>
+                                                    <div class="input-group w-100 flex-nowrap">
+                                                        <span class="input-group-text">
+                                                            <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                        <select name="type3" id="type3" class="form-select rounded-0"
+                                                            style="cursor:pointer">
+                                                            <option value="button" selected="">Button</option>
+                                                            <option value="url">URL</option>
+                                                            <option value="phone">Phone</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group mb-sm-4 ">
+                                                    <div class="form-group mb-4 d-none">
+                                                        <label for="title3">List Title</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <input type="text" name="title3" id="title3"
+                                                                class="form-control" placeholder="title">
+                                                        </div>
+                                                        <small>Leave empty to group with previous title</small>
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label for="message3">Text</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <input type="text" name="message3" id="message3"
+                                                                class="form-control" placeholder="text">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-4 d-none">
+                                                        <label for="footer3">Footer</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <input type="text" name="footer3" id="footer3"
+                                                                class="form-control" placeholder="text">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label for="id3">Id</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <input type="text" name="id3" id="id3" class="form-control"
+                                                                placeholder="idbutton-3" maxlength="30">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-4 d-none">
+                                                        <label for="url3">URL</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <input type="url" name="url3" id="url3" class="form-control"
+                                                                placeholder="https://fonnte.com">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-4 d-none">
+                                                        <label for="tel3">Phone number</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <input type="text" name="tel3" id="tel3" class="form-control"
+                                                                placeholder="6282227097005">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="responseWrapper">
+                                                    <div class="form-group mb-4 ">
+                                                        <label for="response3">Response</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <select name="response3" id="response3"
+                                                                class="form-select rounded-0" style="cursor:pointer">
+                                                                <option value="message" selected="">Message</option>
+                                                                <option value="button">Button</option>
+                                                                <option value="template">Template</option>
+                                                                <option value="list">List</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <div id="file-exist3" class="d-flex flex-column"></div>
+                                                        <div class="d-flex justify-content-between"><label
+                                                                for="file-exist3">File</label><br>
+                                                            <small class="d-block text-end"><u style="cursor:pointer"
+                                                                    id="fileinfo">Limitation</u></small></div>
+                                                        <input class="form-control" type="file" id="file3" name="file3">
+                                                    </div>
+                                                    <div class="form-group mb-4">
+                                                        <label for="file3">Response Message</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <textarea name="responseMessage3" id="responseMessage3"
+                                                                cols="30" rows="10" class="form-control"
+                                                                placeholder="input your response message"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-4 d-none">
+                                                        <label for="responseMessage3">Button</label>
+                                                        <div class="input-group w-100 flex-nowrap">
+                                                            <span class="input-group-text">
+                                                                <svg class="icon icon-xxs ms-1" fill="currentColor"
+                                                                    viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                            <select name="buttonResponse3" id="buttonResponse3"
+                                                                class="form-select rounded-0" style="cursor:pointer">
+                                                                <!-- <option value="1" selected>button 1</option>
+                                                                <option value="2">button 2</option> -->
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4 d-none">
+                                        <label for="addList">Add List</label>
+                                        <div class="input-group w-100 flex-nowrap">
+                                            <input type="number" name="addList" id="addList" class="form-control"
+                                                placeholder="list title" max="25" value="1">
+                                            <button class="input-group-text" id="addListButton">
+                                                <svg class="icon icon-xxs ms-1" fill="currentColor" viewBox="0 0 25 25"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label for="device">Device</label>
+                                        <div class="input-group w-100 flex-nowrap">
+                                            <span class="input-group-text">
+                                                <svg class="icon icon-xxs ms-1" fill="currentColor" viewBox="0 0 25 25"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M22 3v13h-11.643l-4.357 3.105v-3.105h-4v-13h20zm2-2h-24v16.981h4v5.019l7-5.019h13v-16.981zm-5 6h-14v-1h14v1zm0 2h-14v1h14v-1zm-6 3h-8v1h8v-1z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                            <select name="device[]" id="device" class="form-select rounded-0"
+                                                style="cursor: pointer; display: none;" multiple=""
+                                                data-dselect-search="true">undefined<option value="085334954057"
+                                                    selected="">085334954057 (disty)</option></select>
+                                            <div class="dropdown dselect-wrapper rounded-0">
+                                                <button class="form-select " data-dselect-text="false" type="button"
+                                                    data-bs-toggle="dropdown" aria-expanded="false"
+                                                    data-bs-auto-close="outside">
+    
+                                                    <div class="dselect-tag" data-dselect-value="085334954057">
+                                                        085334954057 (disty)
+                                                        <svg onclick="dselectRemoveTag(this, 'dselect-wrapper', 'form-select')"
+                                                            class="dselect-tag-remove" width="14" height="14"
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                            fill="currentColor">
+                                                            <path d="M0 0h24v24H0z" fill="none"></path>
+                                                            <path
+                                                                d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+    
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <div class="d-flex flex-column">
+                                                        <input onkeydown="return event.key !== 'Enter'"
+                                                            onkeyup="dselectSearch(event, this, 'dselect-wrapper', 'form-select', false)"
+                                                            type="text" class="form-control" placeholder="Search"
+                                                            autofocus="">
+                                                        <div class="dselect-items" style="max-height:360px;overflow:auto">
+                                                            <button class="dropdown-item active"
+                                                                data-dselect-value="085334954057" type="button"
+                                                                onclick="dselectUpdate(this, 'dselect-wrapper', 'form-select')"
+                                                                disabled="">085334954057 (disty)</button>
+                                                        </div>
+                                                        <div class="dselect-no-results d-none">No results found</div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
+    
+                                        </div>
+                                        <small>note: the device(s) should have these responses as reply</small>
+                                    </div>
+    
+                                    <div class="d-grid mt-2">
+                                        <button type="submit" class="btn btn-primary mb-4" name="submit" id="submit">
+                                            <svg class="icon icon-xs me-1" fill="currentColor" viewBox="0 0 25 35"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"></path>
+                                            </svg>
+                                            Add
+                                        </button>
+                                    </div>
+                                    <div class="d-grid mt-2">
+                                        <button type="submit" class="btn btn-primary mb-4 d-none" name="update" id="update">
+                                            <svg class="icon icon-xs me-1" fill="currentColor" viewBox="0 0 25 30"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M18 14.45v6.55h-16v-12h6.743l1.978-2h-10.721v16h20v-10.573l-2 2.023zm1.473-10.615l1.707 1.707-9.281 9.378-2.23.472.512-2.169 9.292-9.388zm-.008-2.835l-11.104 11.216-1.361 5.784 5.898-1.248 11.103-11.218-4.536-4.534z">
+                                                </path>
+                                            </svg> Update
+                                        </button>
+                                    </div>
+    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
